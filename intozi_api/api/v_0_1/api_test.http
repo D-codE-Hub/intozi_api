@@ -1,0 +1,40 @@
+# @host = http://127.0.0.1:8005
+
+#devlopment
+@host = http://api.intozi.io:803
+@path = /api/method/intozi_api.api.v_0_1
+@contentType = application/json
+@accept = application/json
+
+
+### LOGIN.PY ================================ LOGIN Page =================================
+
+### login 
+POST {{host}}{{path}}.api.login
+Content-Type: {{contentType}}
+Accept: {{accept}}
+Authorization:
+
+{
+    "username":"administrator",
+    "password":"admin"
+}
+
+### server
+@authorization = Bearer YjI5YzIyYTg5OWVhN2RiOmU3ZDM5YTkzYzdhZWM3YQ==
+
+###
+
+
+### signup 
+POST {{host}}{{path}}.api.add_checkin
+Content-Type: {{contentType}}
+Accept: {{accept}}
+Authorization: {{authorization}}
+
+{
+    "employee_field_value":"HR-EMP-00001",
+    "timestamp":"2024-07-18 19:05:21",
+    "device_id":"1234",
+    "log_type":"IN"
+}
